@@ -9,6 +9,7 @@ export const Rating = ({ isEditable = false, rating, setRating, ...props }: Rati
   useEffect(() => {
     constructRating(rating);
   }, [rating]);
+  
   const constructRating = (currentRating: number) => {
     const updatedArray = ratingArray.map((r: JSX.Element, i: number) => {
       return (
@@ -31,6 +32,7 @@ export const Rating = ({ isEditable = false, rating, setRating, ...props }: Rati
     });
     setRatingArray(updatedArray);
   };
+
   const changeDisplay = (i: number) => {
     if (!isEditable) {
       return;
